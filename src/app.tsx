@@ -1,15 +1,16 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { fetchNumber } from "./services";
 
 const App = () => {
+  const [number, setNumber] = useState(null);
   useEffect(() => {
     const getNumber = async () => {
       const number = await fetchNumber();
-      console.log(number);
+      setNumber(number.value);
     };
     getNumber();
-  });
-  return <h1>Oi</h1>;
+  }, []);
+  return <h1>{number}</h1>;
 };
 
 export default App;
