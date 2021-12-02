@@ -2,10 +2,10 @@ export const compareValues = (firstValue: number, secondValue: number) => {
   const firstNumber = Number(firstValue);
   const secondNumber = Number(secondValue);
   if (firstNumber === secondNumber) {
-    return "Equal";
+    return "Você acertou!!!";
   } else if (firstNumber < secondNumber) {
-    return "Smaller";
+    return "É menor";
   } else if (firstNumber > secondNumber) {
-    return "Bigger";
-  } else return "Error";
+    return "É maior";
+  } else return "Erro";
 };
