@@ -9,15 +9,16 @@ const App = () => {
   const [userInputValue, setUserInputValue] = useState(0);
   const [gameResult, setGameResult] = useState("");
 
-  
+  console.log(number, userInputValue, gameResult);
 
-  const getNumber = async () => {
+  const startGame = async () => {
+    setGameResult("");
     const number = await fetchNumber();
     setNumber(number.value);
   };
 
   useEffect(() => {
-    getNumber();
+    startGame();
   }, []);
 
   const checkResult = () => {
@@ -33,7 +34,7 @@ const App = () => {
         value={userInputValue}
         onChange={setUserInputValue}
       />
-      <Button text="New Game" onClick={getNumber} />
+      <Button text="New Game" onClick={startGame} />
       <Button text="Submit" onClick={checkResult} />
       <h1>{gameResult}</h1>
     </>
