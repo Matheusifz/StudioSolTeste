@@ -31,11 +31,11 @@ const App = () => {
       <Input
         type="number"
         placeholder="Digite seu palpite"
-        value={String(userInputValue)?? ""}
+        value={String(userInputValue) ?? ""}
         onChange={setUserInputValue}
       />
-      <Button text="New Game" onClick={startGame} />
-      <Button text="Submit" onClick={checkResult} />
+      <Button text="Nova Partida" onClick={startGame} />
+      <Button text="Enviar" onClick={checkResult} />
       <h1>{gameResult}</h1>
     </>
   );
