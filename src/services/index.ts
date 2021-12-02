@@ -7,6 +7,7 @@ export const fetchNumber = async () => {
       return response.data;
     })
     .catch((error) => {
+     
       return error;
     });
 };

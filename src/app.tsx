@@ -5,11 +5,9 @@ import { fetchNumber } from "./services";
 import { compareValues } from "./utils";
 
 const App = () => {
-  const [number, setNumber] = useState(0);
-  const [userInputValue, setUserInputValue] = useState(0);
+  const [number, setNumber] = useState<number | null>(null);
+  const [userInputValue, setUserInputValue] = useState<number | null>(null);
   const [gameResult, setGameResult] = useState("");
-
-  console.log(number, userInputValue, gameResult);
 
   const startGame = async () => {
     setGameResult("");
@@ -22,16 +20,18 @@ const App = () => {
   }, []);
 
   const checkResult = () => {
-    const gameResult = compareValues(number, userInputValue);
-    setGameResult(gameResult);
+    if (number && userInputValue) {
+      const gameResult = compareValues(number, userInputValue);
+      setGameResult(gameResult);
+    }
   };
 
   return (
     <>
       <Input
-        name={""}
-        label={""}
-        value={userInputValue}
+        type="number"
+        placeholder="Digite seu palpite"
+        value={String(userInputValue)?? ""}
         onChange={setUserInputValue}
       />
       <Button text="New Game" onClick={startGame} />
