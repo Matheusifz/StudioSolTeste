@@ -1,17 +1,17 @@
 import * as React from "react";
 
 interface InputProps {
-  label: string;
-  value: number;
+  placeholder: string;
+  value: string ;
   onChange: any;
   type: string;
 }
 
-const Input: React.FC<InputProps> = ({ label, onChange, value, type }) => {
+const Input: React.FC<InputProps> = ({ placeholder, onChange, value, type }) => {
   return (
     <div className="input-wrapper">
-      <label>{label}</label>
       <input
+      placeholder={placeholder}
         type={type}
         value={value}
         onChange={(e) => {
