@@ -1,4 +1,5 @@
 import * as React from "react";
+import { BeautifulButton } from "./style";
 
 interface ButtonProps {
   onClick: any;
@@ -9,7 +10,7 @@ export const Button: React.FC<ButtonProps> = ({ onClick, text }) => {
   return (
     <>
       <div className="submit-button">
-        <button onClick={onClick}>{text}</button>
+        <BeautifulButton onClick={onClick}>{text}</BeautifulButton>
       </div>
     </>
   );
