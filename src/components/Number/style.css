@@ -1,0 +1,95 @@
+.display .digit- {
+  position: relative;
+  display: inline-block;
+  margin: 30px;
+  font-size: 0;
+}
+
+.display svg {
+  display: inline-block;
+  margin: 20px;
+}
+
+.display .num- {
+  position: relative;
+  display: inline-block;
+  margin: 30px;
+  font-size: 0;
+}
+.display .num-::before,
+.display .num-::after {
+  content: "";
+  position: absolute;
+  right: -40px;
+  width: 20px;
+  height: 20px;
+  background-color: #0984e3;
+}
+.display .num-::before {
+  top: 80px;
+}
+.display .num-::after {
+  top: 180px;
+}
+.display svg {
+  display: inline-block;
+  margin: 20px;
+  fill: rgba(221, 221, 221, 1);
+}
+
+.display svg .num- {
+  fill: linear-gradient(180deg, #eeeeee 0%, #ffffff 100%);
+  transition: 0.3s ease-in-out;
+}
+
+.display svg.num-1 .b,
+.display svg.num-1 .c,
+.display svg.num-2 .a,
+.display svg.num-2 .b,
+.display svg.num-2 .d,
+.display svg.num-2 .e,
+.display svg.num-2 .g,
+.display svg.num-3 .a,
+.display svg.num-3 .b,
+.display svg.num-3 .c,
+.display svg.num-3 .d,
+.display svg.num-3 .g,
+.display svg.num-4 .b,
+.display svg.num-4 .c,
+.display svg.num-4 .f,
+.display svg.num-4 .g,
+.display svg.num-5 .a,
+.display svg.num-5 .c,
+.display svg.num-5 .d,
+.display svg.num-5 .f,
+.display svg.num-5 .g,
+.display svg.num-6 .a,
+.display svg.num-6 .c,
+.display svg.num-6 .d,
+.display svg.num-6 .e,
+.display svg.num-6 .f,
+.display svg.num-6 .g,
+.display svg.num-7 .a,
+.display svg.num-7 .b,
+.display svg.num-7 .c,
+.display svg.num-8 .a,
+.display svg.num-8 .b,
+.display svg.num-8 .c,
+.display svg.num-8 .d,
+.display svg.num-8 .e,
+.display svg.num-8 .f,
+.display svg.num-8 .g,
+.display svg.num-9 .a,
+.display svg.num-9 .b,
+.display svg.num-9 .c,
+.display svg.num-9 .d,
+.display svg.num-9 .f,
+.display svg.num-9 .g,
+.display svg.num-0 .a,
+.display svg.num-0 .b,
+.display svg.num-0 .c,
+.display svg.num-0 .d,
+.display svg.num-0 .e,
+.display svg.num-0 .f {
+  fill: rgba(38, 42, 52, 1);
+}

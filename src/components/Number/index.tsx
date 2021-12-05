@@ -8,7 +8,7 @@ interface NumberProps {
 
 export const Number: React.FC<NumberProps> = ({ numbers }) => {
   return (
-    <div className="digital-watch">
+    <div className="display">
       <svg width="0" height="0" viewBox="0 0 0 0">
         <defs>
           <g id="unit-h">
@@ -19,10 +19,9 @@ export const Number: React.FC<NumberProps> = ({ numbers }) => {
           </g>
         </defs>
       </svg>
-
-      <div className="second">
+      <div className="digit">
         {numbers.map((value) => (
-          <Digit value={`${value}`} id={`second-${value}`} />
+          <Digit value={`num-${value}`} id={`digit-${value}`} />
         ))}
       </div>
     </div>
