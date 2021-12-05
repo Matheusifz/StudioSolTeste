@@ -5,6 +5,7 @@ import Input from "./components/Input";
 import { Number as NumberContainer } from "./components/Number";
 import { fetchNumber } from "./services";
 import { compareValues } from "./utils";
+import "./styles/global.css";
 
 const App = () => {
   const [number, setNumber] = useState<number | null>(null);
@@ -16,7 +17,6 @@ const App = () => {
     const digits = number.toString().split("");
     return digits.map(Number);
   };
-
 
   const startGame = async () => {
     setGameResult("");
