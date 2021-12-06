@@ -1,23 +1,29 @@
 import * as React from "react";
+import { BeautifulInput } from "./styles";
 
 interface InputProps {
   placeholder: string;
-  value: string ;
+  value: string;
   onChange: any;
   type: string;
 }
 
-const Input: React.FC<InputProps> = ({ placeholder, onChange, value, type }) => {
+const Input: React.FC<InputProps> = ({
+  placeholder,
+  onChange,
+  value,
+  type,
+}) => {
   return (
     <div className="input-wrapper">
-      <input
-      placeholder={placeholder}
+      <BeautifulInput
+        placeholder={placeholder}
         type={type}
         value={value}
         onChange={(e) => {
           onChange(e.target.value);
         }}
-      ></input>
+      ></BeautifulInput>
     </div>
   );
 };
