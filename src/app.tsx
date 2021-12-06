@@ -5,6 +5,7 @@ import Input from "./components/Input";
 import { Number as NumberContainer } from "./components/Number";
 import { fetchNumber } from "./services";
 import { compareValues } from "./utils";
+import { Text } from "./components/Text";
 import "./styles/global.css";
 
 const App = () => {
@@ -37,6 +38,7 @@ const App = () => {
 
   return (
     <>
+      <Text text="QUAL É O NÚMERO?" />
       <Input
         type="number"
         placeholder="Digite seu palpite"
