@@ -1,16 +1,19 @@
 import * as React from "react";
-import { BeautifulButton } from "./style";
+import { StyledButton } from "./style";
 
 interface ButtonProps {
   onClick: any;
   text: string;
+  color: string;
 }
 
-export const Button: React.FC<ButtonProps> = ({ onClick, text }) => {
+export const Button: React.FC<ButtonProps> = ({ onClick, text, color }) => {
   return (
     <>
       <div className="submit-button">
-        <BeautifulButton onClick={onClick}>{text}</BeautifulButton>
+        <StyledButton onClick={onClick} color={color}>
+          {text}
+        </StyledButton>
       </div>
     </>
   );
