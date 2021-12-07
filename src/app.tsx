@@ -45,8 +45,16 @@ const App = () => {
         value={String(userInputValue) ?? ""}
         onChange={setUserInputValue}
       />
-      <Button text="NOVA PARTIDA" onClick={startGame} />
-      <Button text="ENVIAR" onClick={checkResult} />
+      <Button
+        color="linear-gradient(180deg, #434854 0%, #9E9E9E 100%);"
+        text="NOVA PARTIDA"
+        onClick={startGame}
+      />
+      <Button
+        color="linear-gradient(180deg, #EF6C00 0%, #C0661C 100%);"
+        text="ENVIAR"
+        onClick={checkResult}
+      />
       <h2>{gameResult}</h2>
       <NumberContainer numbers={digits} />
     </>
