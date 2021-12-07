@@ -10,5 +10,9 @@ export const Wrapper = styled.div`
     border-radius: 4px;
     height: 42px;
     width: 217px;
+
+    &:disabled {
+      border: 1px solid #cfcfcf;
+    }
   }
 `;
