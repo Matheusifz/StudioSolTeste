@@ -38,8 +38,8 @@ const App = () => {
 
   return (
     <>
-      <Text text="QUAL É O NÚMERO?" />
-      <h2>{gameResult}</h2>
+      <Text fontSize="24px" text="QUAL É O NÚMERO?" />
+      <Text fontSize="16px" text={`${gameResult}`}></Text>
       <NumberContainer numbers={digits} />
       <div className="new-match-container">
         <Button

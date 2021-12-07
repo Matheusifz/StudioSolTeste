@@ -1,10 +1,14 @@
 import styled from "styled-components";
 
-export const Text = styled.h1`
+interface StyledTextProps {
+  fontSize: string;
+}
+
+export const StyledText = styled.h1<StyledTextProps>`
   font-family: "Montserrat", sans-serif;
   font-style: normal;
   font-weight: bold;
-  font-size: 36px;
+  font-size: ${(props) => (props.fontSize ? props.fontSize : "auto")};
   line-height: 44px;
   text-align: center;
   border: 0;
