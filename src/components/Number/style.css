@@ -5,6 +5,20 @@
   font-size: 0;
 }
 
+.display {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  box-sizing: border-box;
+  justify-content: center;
+}
+
+.digit {
+  display: flex;
+  max-width: 25%;
+  padding: 0;
+}
+
 .display svg {
   display: inline-block;
   margin: 20px;
