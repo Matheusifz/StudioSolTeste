@@ -4,4 +4,15 @@ export const BeautifulInput = styled.input`
   border: 1px solid #ff6600;
   box-sizing: border-box;
   border-radius: 4px;
+  height: 42px;
+  width: 217px;
+`;
+
+export const Wrapper = styled.div`
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  position: absolute;
+  bottom: 80px;
+  left: 580px;
 `;

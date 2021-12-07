@@ -1,5 +1,5 @@
 import * as React from "react";
-import { BeautifulInput } from "./styles";
+import { BeautifulInput, Wrapper } from "./styles";
 
 interface InputProps {
   placeholder: string;
@@ -15,7 +15,7 @@ const Input: React.FC<InputProps> = ({
   type,
 }) => {
   return (
-    <div className="input-wrapper">
+    <Wrapper>
       <BeautifulInput
         placeholder={placeholder}
         type={type}
@@ -24,7 +24,7 @@ const Input: React.FC<InputProps> = ({
           onChange(e.target.value);
         }}
       ></BeautifulInput>
-    </div>
+    </Wrapper>
   );
 };
 
