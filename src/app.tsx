@@ -65,6 +65,7 @@ const App = () => {
       </div>
       <div className="input-container">
         <Input
+          isDisabled={true}
           type="number"
           placeholder="Digite seu palpite"
           value={String(userInputValue) ?? ""}

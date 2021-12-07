@@ -1,11 +1,12 @@
 import * as React from "react";
-import { BeautifulInput, Wrapper } from "./styles";
+import { Wrapper } from "./styles";
 
 interface InputProps {
   placeholder: string;
   value: string;
   onChange: any;
   type: string;
+  isDisabled?: boolean;
 }
 
 const Input: React.FC<InputProps> = ({
@@ -13,17 +14,19 @@ const Input: React.FC<InputProps> = ({
   onChange,
   value,
   type,
+  isDisabled,
 }) => {
   return (
     <Wrapper>
-      <BeautifulInput
+      <input
         placeholder={placeholder}
         type={type}
         value={value}
         onChange={(e) => {
           onChange(e.target.value);
         }}
-      ></BeautifulInput>
+        disabled={isDisabled}
+      />
     </Wrapper>
   );
 };
