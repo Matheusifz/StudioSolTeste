@@ -9,10 +9,6 @@ export const BeautifulInput = styled.input`
 `;
 
 export const Wrapper = styled.div`
-  box-sizing: border-box;
   padding: 0;
   margin: 0;
-  position: absolute;
-  bottom: 80px;
-  left: 580px;
 `;
