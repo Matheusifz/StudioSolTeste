@@ -2,6 +2,8 @@ import styled from "styled-components";
 
 interface StyledTextProps {
   fontSize: string;
+  backgroundImage: string;
+  backgroundColor: string;
 }
 
 export const StyledText = styled.h1<StyledTextProps>`
@@ -16,8 +18,10 @@ export const StyledText = styled.h1<StyledTextProps>`
   box-sizing: border-box;
   display: flex;
   justify-content: center;
-  background-color: #f3ec78;
-  background-image: linear-gradient(174.92deg, #ef6c00, #db6300);
+  background-color: ${(props) =>
+    props.backgroundColor ? props.backgroundColor : "#f3ec78"};
+  background-image: ${(props) =>
+    props.backgroundImage ? props.backgroundImage : "auto"};
   background-size: 100%;
   -webkit-background-clip: text;
   -moz-background-clip: text;

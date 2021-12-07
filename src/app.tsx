@@ -13,6 +13,7 @@ const App = () => {
   const [userInputValue, setUserInputValue] = useState<number | null>(null);
   const [gameResult, setGameResult] = useState("");
   const [digits, setDigits] = useState<Array<any>>([0]);
+  const [winTextColor, setWinTextColor] = useState("#ef6c00");
 
   const extractDigits = (number: number) => {
     const digits = number.toString().split("");
@@ -32,14 +33,26 @@ const App = () => {
   const checkResult = () => {
     if (number && userInputValue) {
       const gameResult = compareValues(number, userInputValue);
+      if (gameResult === "Você acertou!!!") {
+        setWinTextColor("#32BF00");
+      }
       setGameResult(gameResult);
     }
   };
-
   return (
     <>
-      <Text fontSize="24px" text="QUAL É O NÚMERO?" />
-      <Text fontSize="16px" text={`${gameResult}`}></Text>
+      <Text
+        backgroundColor=""
+        backgroundImage="linear-gradient(174.92deg, #ef6c00, #db6300)"
+        fontSize="24px"
+        text="QUAL É O NÚMERO?"
+      />
+      <Text
+        backgroundColor={winTextColor}
+        backgroundImage="red"
+        fontSize="16px"
+        text={`${gameResult}`}
+      ></Text>
       <NumberContainer numbers={digits} />
       <div className="new-match-container">
         <Button
