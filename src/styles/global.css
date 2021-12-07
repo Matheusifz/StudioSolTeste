@@ -12,3 +12,20 @@ input::-webkit-inner-spin-button {
 input[type="number"] {
   -moz-appearance: textfield; /* Firefox */
 }
+
+.input-container {
+  display: flex;
+  justify-content: center;
+  margin: 0;
+  padding: 50px;
+  box-sizing: border-box;
+  align-items: center;
+}
+.new-match-container {
+  display: flex;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  align-items: center;
+}
