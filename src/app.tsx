@@ -12,7 +12,7 @@ const App = () => {
   const [number, setNumber] = useState<number | null>(null);
   const [userInputValue, setUserInputValue] = useState<number | null>(null);
   const [gameResult, setGameResult] = useState("");
-  const [digits, setDigits] = useState<Array<any>>([0]);
+  const [digits, setDigits] = useState<Array<number>>([0]);
   const [winTextColor, setWinTextColor] = useState("#ef6c00");
   const [isGameRunning, setIsGameRunning] = useState(false);
   const [isErroed, setIsErroed] = useState(false);
@@ -30,13 +30,13 @@ const App = () => {
     setGameResult("");
     const number = await fetchNumber();
     setNumber(number.value);
-    setDigits(extractDigits(number.value));
   };
   useEffect(() => {
     startGame();
   }, []);
 
   const checkResult = () => {
+    setDigits(extractDigits(userInputValue ?? 0));
     if (number && userInputValue) {
       const gameResult = compareValues(number, userInputValue);
       if (gameResult === "Você acertou!!!") {
