@@ -18,6 +18,13 @@ const App = () => {
   const [isErroed, setIsErroed] = useState(false);
   const [numberColor, setNumberColor] = useState("#262A34");
 
+  const renderScreen = () => {
+    if (isErroed) {
+      return <NumberContainer fill={"#CC3300"} numbers={[5, 0, 2]} />;
+    }
+    return <NumberContainer fill={numberColor} numbers={digits} />;
+  };
+
   const extractDigits = (number: number) => {
     const digits = number.toString().split("");
     return digits.map(Number);
@@ -29,6 +36,9 @@ const App = () => {
     setNumberColor("#262A34");
     setGameResult("");
     const number = await fetchNumber();
+    if (!number.value) {
+      setIsErroed(true);
+    }
     setNumber(number.value);
   };
   useEffect(() => {
@@ -63,7 +73,7 @@ const App = () => {
         fontSize="16px"
         text={`${gameResult}`}
       ></Text>
-      <NumberContainer fill={numberColor} numbers={digits} />
+      {renderScreen()}
       <div className="new-match-container">
         <Button
           width="130px"
