@@ -7,6 +7,7 @@ import { fetchNumber } from "./services";
 import { compareValues } from "./utils";
 import { Text } from "./components/Text";
 import "./styles/global.css";
+import { Container } from "./components/Container/style";
 
 const App = () => {
   const [number, setNumber] = useState<number | null>(null);
@@ -63,7 +64,7 @@ const App = () => {
     }
   };
   return (
-    <>
+    <Container>
       <Text
         backgroundColor=""
         backgroundImage="linear-gradient(174.92deg, #ef6c00, #db6300)"
@@ -103,7 +104,7 @@ const App = () => {
           onClick={checkResult}
         />
       </div>
-    </>
+    </Container>
   );
 };
 
