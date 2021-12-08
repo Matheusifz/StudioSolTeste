@@ -16,6 +16,7 @@ const App = () => {
   const [winTextColor, setWinTextColor] = useState("#ef6c00");
   const [isGameRunning, setIsGameRunning] = useState(false);
   const [isErroed, setIsErroed] = useState(false);
+  const [numberColor, setNumberColor] = useState("#262A34");
 
   const extractDigits = (number: number) => {
     const digits = number.toString().split("");
@@ -25,6 +26,7 @@ const App = () => {
   const startGame = async () => {
     setIsGameRunning(true);
     setWinTextColor("#ef6c00");
+    setNumberColor("#262A34");
     setGameResult("");
     const number = await fetchNumber();
     setNumber(number.value);
@@ -39,6 +41,7 @@ const App = () => {
       const gameResult = compareValues(number, userInputValue);
       if (gameResult === "Você acertou!!!") {
         setWinTextColor("#32BF00");
+        setNumberColor("#32BF00");
       }
       if (gameResult === "Você acertou!!!" || isErroed) {
         setIsGameRunning(false);
@@ -60,7 +63,7 @@ const App = () => {
         fontSize="16px"
         text={`${gameResult}`}
       ></Text>
-      <NumberContainer numbers={digits} />
+      <NumberContainer fill={numberColor} numbers={digits} />
       <div className="new-match-container">
         <Button
           width="130px"

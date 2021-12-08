@@ -1,6 +1,10 @@
 import styled from "styled-components";
 
-export const Number = styled.div`
+interface NumberProps {
+  fill: string;
+}
+
+export const Number = styled.div<NumberProps>`
   margin: 0;
   padding: 0;
   display: flex;
@@ -98,6 +102,6 @@ export const Number = styled.div`
   svg.num-0 .d,
   svg.num-0 .e,
   svg.num-0 .f {
-    fill: rgba(38, 42, 52, 1);
+    fill: ${(props) => props.fill};
   }
 `;

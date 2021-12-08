@@ -7,12 +7,12 @@ import { Number as StyledNumber } from "./styled";
 
 interface NumberProps {
   numbers: Array<number>;
+  fill: string;
 }
 
-export const Number: React.FC<NumberProps> = ({ numbers }) => {
-  console.log(numbers);
+export const Number: React.FC<NumberProps> = ({ numbers, fill }) => {
   return (
-    <StyledNumber>
+    <StyledNumber fill={fill}>
       <svg width="0" height="0" viewBox="0 0 0 0">
         <defs>
           <g id="unit-h">
