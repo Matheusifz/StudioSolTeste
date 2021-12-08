@@ -14,6 +14,8 @@ const App = () => {
   const [gameResult, setGameResult] = useState("");
   const [digits, setDigits] = useState<Array<any>>([0]);
   const [winTextColor, setWinTextColor] = useState("#ef6c00");
+  const [isGameRunning, setIsGameRunning] = useState(false);
+  const [isErroed, setIsErroed] = useState(false);
 
   const extractDigits = (number: number) => {
     const digits = number.toString().split("");
@@ -21,6 +23,8 @@ const App = () => {
   };
 
   const startGame = async () => {
+    setIsGameRunning(true);
+    setWinTextColor("#ef6c00");
     setGameResult("");
     const number = await fetchNumber();
     setNumber(number.value);
@@ -35,6 +39,9 @@ const App = () => {
       const gameResult = compareValues(number, userInputValue);
       if (gameResult === "Você acertou!!!") {
         setWinTextColor("#32BF00");
+      }
+      if (gameResult === "Você acertou!!!" || isErroed) {
+        setIsGameRunning(false);
       }
       setGameResult(gameResult);
     }
@@ -65,13 +72,14 @@ const App = () => {
       </div>
       <div className="input-container">
         <Input
-          isDisabled={true}
+          isDisabled={!isGameRunning}
           type="number"
-          placeholder="Digite seu palpite"
+          placeholder="   Digite seu palpite"
           value={String(userInputValue) ?? ""}
           onChange={setUserInputValue}
         />
         <Button
+          isDisabled={!isGameRunning}
           width="70px"
           height="42px"
           color="linear-gradient(180deg, #EF6C00 0%, #C0661C 100%);"
