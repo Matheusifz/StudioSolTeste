@@ -1,14 +1,18 @@
-import React, { useState } from "react";
+import React from "react";
+
 import { Digit } from "../Digit";
-import "./style.css";
+/* import "./style.css";
+ */
+import { Number as StyledNumber } from "./styled";
 
 interface NumberProps {
   numbers: Array<number>;
 }
 
 export const Number: React.FC<NumberProps> = ({ numbers }) => {
+  console.log(numbers);
   return (
-    <div className="display">
+    <StyledNumber>
       <svg width="0" height="0" viewBox="0 0 0 0">
         <defs>
           <g id="unit-h">
@@ -24,6 +28,6 @@ export const Number: React.FC<NumberProps> = ({ numbers }) => {
           <Digit value={`num-${value}`} id={`digit-${value}`} />
         ))}
       </div>
-    </div>
+    </StyledNumber>
   );
 };
