@@ -38,6 +38,9 @@ const App = () => {
     const number = await fetchNumber();
     if (!number.value) {
       setIsErroed(true);
+      setIsGameRunning(false);
+      setGameResult("ERRO");
+      setWinTextColor("#CC3300");
     }
     setNumber(number.value);
   };
