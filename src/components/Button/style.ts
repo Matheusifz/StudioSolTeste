@@ -8,7 +8,6 @@ interface StyledButtonProps {
 
 export const StyledButton = styled.button<StyledButtonProps>`
   background: ${(props) => props.color};
-  /* linear-gradient(180deg, #ef6c00 0%, #c0661c 100%) ;*/
   border-radius: 4px;
   width: ${(props) => (props.width ? props.width : "auto")};
   height: ${(props) => props.height};
@@ -19,4 +18,8 @@ export const StyledButton = styled.button<StyledButtonProps>`
   line-height: 14px;
   color: #ffffff;
   margin: 5px;
+
+  &:disabled {
+    background: #dddddd;
+  }
 `;

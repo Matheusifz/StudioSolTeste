@@ -7,6 +7,7 @@ interface ButtonProps {
   color: string;
   width: string;
   height: string;
+  isDisabled?: boolean;
 }
 
 export const Button: React.FC<ButtonProps> = ({
@@ -15,6 +16,7 @@ export const Button: React.FC<ButtonProps> = ({
   color,
   width,
   height,
+  isDisabled,
 }) => {
   return (
     <>
@@ -24,6 +26,7 @@ export const Button: React.FC<ButtonProps> = ({
           color={color}
           width={width}
           height={height}
+          disabled={isDisabled}
         >
           {text}
         </StyledButton>
